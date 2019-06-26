@@ -1,8 +1,10 @@
+package com.vlada.tasks.rotation;
+
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Main {
+public class Rotation {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please, enter an integer to specify the size of an array");
@@ -17,17 +19,17 @@ public class Main {
         Integer[] rotatedToTheLeftArray = copyArray(someArray);
         System.out.println("Please, specify how to rotate an array: right(R) or left(L)");
         String rotation = scanner.next();
-        if (rotation.equals("R")){
+        if (rotation.equals("R")) {
             for (int i = 0; i < rotationTimes; i++) {
-                rotateToTheRight(rotatedToTheRightArray,rotationTimes);
+                rotateToTheRight(rotatedToTheRightArray, rotationTimes);
             }
             System.out.println("Generated array was rotated to the right " + rotationTimes + " times");
             for (int i = 0; i < rotatedToTheRightArray.length; i++) {
                 System.out.println(rotatedToTheRightArray[i] + "\t");
             }
-        }else if (rotation.equals("L")){
+        } else if (rotation.equals("L")) {
             for (int i = 0; i < rotationTimes; i++) {
-                rotateToTheLeft(rotatedToTheLeftArray,rotationTimes);
+                rotateToTheLeft(rotatedToTheLeftArray, rotationTimes);
             }
             System.out.println("Generated array was rotated to the left " + rotationTimes + " times");
             for (int i = 0; i < rotatedToTheLeftArray.length; i++) {
@@ -49,7 +51,7 @@ public class Main {
     }
 
 
-    private static void generateArray(Integer[] arrayToGenerate, int rangeOfNumbers) {
+    public static void generateArray(Integer[] arrayToGenerate, int rangeOfNumbers) {
         Random generator = new Random();
         for (int i = 0; i < arrayToGenerate.length; i++) {
             int gn = generator.nextInt(rangeOfNumbers);
@@ -60,30 +62,30 @@ public class Main {
 
     public static Integer[] copyArray(Integer[] m) {
         Integer[] copiedArray = new Integer[m.length];
-        for (int i = 0; i < m.length; i++){
-            copiedArray [i] = m[i];
+        for (int i = 0; i < m.length; i++) {
+            copiedArray[i] = m[i];
         }
         return copiedArray;
     }
 
     public static void rotateToTheRight(Integer[] m, int rotationTimes) {
         for (int i = 0; i < rotationTimes; i++) {
-         for (int columnIndex = 0; columnIndex < m.length-1; columnIndex++) {
-            int temp = m[0];
-            m[0]= m[columnIndex+1];
-            m[columnIndex+1] = temp;
+            for (int columnIndex = 0; columnIndex < m.length - 1; columnIndex++) {
+                int temp = m[0];
+                m[0] = m[columnIndex + 1];
+                m[columnIndex + 1] = temp;
 
-        }
-    }}
-
-    public static void rotateToTheLeft(Integer[] m, int rotationTimes) {
-        for (int i = 0; i < rotationTimes; i++) {for (int columnIndex = m.length-1; columnIndex>0; columnIndex--) {
-            int temp = m[m.length-1];
-            m[m.length-1]= m[columnIndex-1];
-            m[columnIndex-1]= temp;
+            }
         }
     }
-}}
 
-
-
+    public static void rotateToTheLeft(Integer[] m, int rotationTimes) {
+        for (int i = 0; i < rotationTimes; i++) {
+            for (int columnIndex = m.length - 1; columnIndex > 0; columnIndex--) {
+                int temp = m[m.length - 1];
+                m[m.length - 1] = m[columnIndex - 1];
+                m[columnIndex - 1] = temp;
+            }
+        }
+    }
+}

@@ -1,3 +1,7 @@
+package com.vlada.tasks.finalgrade;
+
+import java.util.Scanner;
+
 public class FinalGrade {
     public static void main(String[] args) {
         int grade = 60;
@@ -23,8 +27,9 @@ public class FinalGrade {
     }
 
 
-    public static int finalGrade(int grade,int numberOfProjects){
+    public static int finalGrade(int grade, int numberOfProjects){
         int finalGrade;
+        Scanner keyboard = new Scanner(System.in);
         if (grade>90 || numberOfProjects>10){
             finalGrade=100;
         }else if(grade > 75 && numberOfProjects >= 5){

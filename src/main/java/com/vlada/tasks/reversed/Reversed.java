@@ -1,3 +1,7 @@
+package com.vlada.tasks.reversed;
+
+import java.util.Scanner;
+
 public class Reversed {
     public static void main(String[] args) {
         String stringToReverse = "Never wanted to leave, never wanted to leave";
@@ -5,7 +9,9 @@ public class Reversed {
     }
 
     public static void reverseString(String string) {
-        String stringToReverse = "Never wanted to leave, never wanted to leave";
+        Scanner keyboard = new Scanner(System.in);
+        String stringToReverse = keyboard.nextLine();
+        System.out.println("Please, enter a string to reverse");
         String[] subStr;
         String delimeter = " ";
         subStr = stringToReverse.split(delimeter);

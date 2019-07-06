@@ -1,3 +1,4 @@
+import com.vlada.tasks.finalgrade.FinalGrade;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

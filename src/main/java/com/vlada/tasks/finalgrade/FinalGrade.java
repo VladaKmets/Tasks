@@ -1,3 +1,5 @@
+package com.vlada.tasks.finalgrade;
+
 public class FinalGrade {
     public static void main(String[] args) {
         int grade = 60;
@@ -23,7 +25,7 @@ public class FinalGrade {
     }
 
 
-    public static int finalGrade(int grade,int numberOfProjects){
+    public static int finalGrade(int grade, int numberOfProjects){
         int finalGrade;
         if (grade>90 || numberOfProjects>10){
             finalGrade=100;
@@ -35,5 +37,6 @@ public class FinalGrade {
             finalGrade =0;
         }
         return finalGrade;
+
     }
 }

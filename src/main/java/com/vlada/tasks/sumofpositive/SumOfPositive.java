@@ -1,3 +1,5 @@
+package com.vlada.tasks.sumofpositive;
+
 public class SumOfPositive {
     public static void main(String[] args) {
         Integer arrayOfNumbers[] = {-2, 5, 3, -7, 15};

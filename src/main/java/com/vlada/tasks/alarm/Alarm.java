@@ -1,12 +1,7 @@
+package com.vlada.tasks.alarm;
+
 public class Alarm {
     public static void main(String[] args) {
-boolean employed = true;
-boolean vacation = false;
-        setAlarm(employed,vacation);
-
-        employed = false;
-       vacation = false;
-        setAlarm(employed,vacation);
     }
 
     public static void setAlarm(boolean employed, boolean vacation) {
@@ -16,6 +11,11 @@ boolean vacation = false;
         } else {
             setAlarm = false;
         }
-        System.out.println(setAlarm);
+        System.out.println("setAlarm = " + setAlarm);
+        if (setAlarm == true) {
+            System.out.println("Your alarm will ring");
+        } else if (setAlarm == false) {
+            System.out.println("Sorry, your alarm won't ring. Have a good sleep!");
+        }
     }
 }

@@ -1,5 +1,6 @@
 package com.vlada.tasks.valuesdoubled.controller;
 
+import com.vlada.tasks.utils.Constants;
 import com.vlada.tasks.valuesdoubled.ValuesDoubled;
 
 import java.io.BufferedReader;
@@ -14,7 +15,7 @@ public class ValuesDoubledController {
         System.out.println("Please, chose where you want to tke data from: file(F) or manual input(I)");
         String inputString = keyboard.nextLine();
         Integer[] integers = {3, 2, 5, 8, 1, 4};
-        if (inputString.equals("F")) {
+        if (inputString.equals(Constants.FILE)) {
             BufferedReader bufferedReader = null;
             FileReader fileReader = null;
             try {
@@ -38,9 +39,11 @@ public class ValuesDoubledController {
                 } catch (IOException e) {
                     System.out.println("Something went wrong. Contact admin.");
                 }
+                keyboard.close();
             }
-        } else if (inputString.equals("I")) {
+        } else if (inputString.equals(Constants.INPUT)) {
             ValuesDoubled.calculate(integers);
         }
+
     }
 }

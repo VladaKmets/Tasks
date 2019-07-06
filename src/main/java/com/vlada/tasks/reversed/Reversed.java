@@ -1,5 +1,7 @@
 package com.vlada.tasks.reversed;
 
+import com.vlada.tasks.utils.Constants;
+
 import java.util.Scanner;
 
 public class Reversed {
@@ -12,12 +14,11 @@ public class Reversed {
         Scanner keyboard = new Scanner(System.in);
         String stringToReverse = keyboard.nextLine();
         System.out.println("Please, enter a string to reverse");
-        String[] subStr;
-        String delimeter = " ";
-        subStr = stringToReverse.split(delimeter);
-        for (int i = subStr.length - 1; i >= 0; i--) {
-            System.out.print(subStr[i]+delimeter);
+        String[] subStrings;
+        subStrings = stringToReverse.split(Constants.DELIMETER);
+        for (int i = subStrings.length - 1; i >= 0; i--) {
+            System.out.print(subStrings[i] + Constants.DELIMETER);
         }
-
+        keyboard.close();
     }
 }

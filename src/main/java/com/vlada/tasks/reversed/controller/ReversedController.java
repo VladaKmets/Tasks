@@ -1,6 +1,7 @@
 package com.vlada.tasks.reversed.controller;
 
 import com.vlada.tasks.reversed.Reversed;
+import com.vlada.tasks.utils.Constants;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -14,7 +15,7 @@ public class ReversedController {
         System.out.println("Please, chose where you want to tke data from: file(F) or manual input(I)");
         String inputString = keyboard.nextLine();
         String stringToReverse = "Never wanted to leave, never wanted to leave";
-        if (inputString.equals("F")) {
+        if (inputString.equals(Constants.FILE)) {
             BufferedReader bufferedReader = null;
             FileReader fileReader = null;
             try {
@@ -38,8 +39,9 @@ public class ReversedController {
                 } catch (IOException e) {
                     System.out.println("Something went wrong. Contact admin.");
                 }
+                keyboard.close();
             }
-        } else if (inputString.equals("I")) {
+        } else if (inputString.equals(Constants.INPUT)) {
             Reversed.reverseString(stringToReverse);
         }
     }

@@ -14,7 +14,7 @@ public class FinalGradeController {
         System.out.println("You chose option 2: get the final grade");
         System.out.println("Please, chose where you want to take data from: file(F) or manual input(I)");
         String inputString = keyboard.nextLine();
-        if (inputString.equals("F")) {
+        if (inputString.equals(Constants.FILE)) {
             BufferedReader bufferedReader = null;
             FileReader fileReader = null;
             try {
@@ -22,9 +22,9 @@ public class FinalGradeController {
                 bufferedReader = new BufferedReader(fileReader);
                 String sCurrentLine;
                 sCurrentLine = bufferedReader.readLine();
-                String[] subStr;
-                subStr = sCurrentLine.split(Constants.DELIMETER);
-                int finalGrade = FinalGrade.finalGrade(Integer.valueOf(subStr[0]), Integer.valueOf(subStr[1]));
+                String[] subString;
+                subString = sCurrentLine.split(Constants.DELIMETER);
+                int finalGrade = FinalGrade.finalGrade(Integer.valueOf(subString[0]), Integer.valueOf(subString[1]));
                 System.out.println("Your final grade =" + finalGrade);
             } catch (IOException e) {
                 System.out.println("Something went wrong. Contact admin.");
@@ -40,14 +40,16 @@ public class FinalGradeController {
                 } catch (IOException e) {
                     System.out.println("Something went wrong. Contact admin.");
                 }
+                keyboard.close();
             }
-        } else if (inputString.equals("I")) {
+        } else if (inputString.equals(Constants.INPUT)) {
             System.out.println("Please, enter your grade for exam");
             int grade = keyboard.nextInt();
             System.out.println("Please, enter the number of projects you participated in");
             int numberOfProjects = keyboard.nextInt();
             int finalGrade = FinalGrade.finalGrade(grade, numberOfProjects);
             System.out.println("Your final grade = " + finalGrade);
+            keyboard.close();
         }
     }
 }

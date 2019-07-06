@@ -1,6 +1,7 @@
 package com.vlada.tasks.sumofpositive.controller;
 
 import com.vlada.tasks.sumofpositive.SumOfPositive;
+import com.vlada.tasks.utils.Constants;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -13,7 +14,7 @@ public class SumOfPositiveController {
         System.out.println("You chose option 5: get the sum of positive elements of array");
         System.out.println("Please, chose where you want to take data from: file(F) or manual input(I)");
         String inputString = keyboard.nextLine();
-        if (inputString.equals("F")) {
+        if (inputString.equals(Constants.FILE)) {
             BufferedReader bufferedReader = null;
             FileReader fileReader = null;
             try {
@@ -37,8 +38,9 @@ public class SumOfPositiveController {
                 } catch (IOException e) {
                     System.out.println("Something went wrong. Contact admin.");
                 }
+                keyboard.close();
             }
-        } else if (inputString.equals("I")) {
+        } else if (inputString.equals(Constants.INPUT)) {
             System.out.println("Please, enter the size of an array");
             Integer size = keyboard.nextInt();
             System.out.println("Please, enter" + size + " elements for an array");
@@ -48,6 +50,7 @@ public class SumOfPositiveController {
                 elements[i] = element;
             }
             SumOfPositive.getSumOfPositive(elements);
+            keyboard.close();
         }
     }
 }

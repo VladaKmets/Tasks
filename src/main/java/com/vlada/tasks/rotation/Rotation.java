@@ -1,5 +1,7 @@
 package com.vlada.tasks.rotation;
 
+import com.vlada.tasks.utils.Constants;
+
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
@@ -19,7 +21,7 @@ public class Rotation {
         Integer[] rotatedToTheLeftArray = copyArray(someArray);
         System.out.println("Please, specify how to rotate an array: right(R) or left(L)");
         String rotation = scanner.next();
-        if (rotation.equals("R")) {
+        if (rotation.equals(Constants.RIGHT)) {
             for (int i = 0; i < rotationTimes; i++) {
                 rotateToTheRight(rotatedToTheRightArray, rotationTimes);
             }
@@ -27,7 +29,7 @@ public class Rotation {
             for (int i = 0; i < rotatedToTheRightArray.length; i++) {
                 System.out.println(rotatedToTheRightArray[i] + "\t");
             }
-        } else if (rotation.equals("L")) {
+        } else if (rotation.equals(Constants.LEFT)) {
             for (int i = 0; i < rotationTimes; i++) {
                 rotateToTheLeft(rotatedToTheLeftArray, rotationTimes);
             }
@@ -36,6 +38,7 @@ public class Rotation {
                 System.out.println(rotatedToTheLeftArray[i] + "\t");
             }
         }
+        scanner.close();
     }
 
     public static int getIntFromUser(Scanner scanner) {

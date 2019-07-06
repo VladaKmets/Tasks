@@ -38,6 +38,7 @@ public class AlarmController {
                 } catch (IOException e) {
                     System.out.println("Something went wrong. Contact admin.");
                 }
+                keyboard.close();
             }
         } else if (inputString.equals("I")) {
             System.out.println("Please, enter the status of 'employed' parameter: true or false");
@@ -45,6 +46,7 @@ public class AlarmController {
             System.out.println("Please, enter the status of 'vacation' parameter: true or false");
             boolean vacation = keyboard.nextBoolean();
             Alarm.setAlarm(employed, vacation);
+            keyboard.close();
         }
     }
 }

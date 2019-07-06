@@ -1,6 +1,7 @@
 package com.vlada.tasks.rotation.controller;
 
 import com.vlada.tasks.rotation.Rotation;
+import com.vlada.tasks.utils.Constants;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -21,7 +22,7 @@ public class RotationController {
         Integer[] rotatedToTheLeftArray = Rotation.copyArray(someArray);
         System.out.println("Please, specify how to rotate an array: right(R) or left(L)");
         String rotation = keyboard.next();
-        if (rotation.equals("R")) {
+        if (rotation.equals(Constants.RIGHT)) {
             for (int i = 0; i < rotationTimes; i++) {
                 Rotation.rotateToTheRight(rotatedToTheRightArray, rotationTimes);
             }
@@ -29,7 +30,7 @@ public class RotationController {
             for (int i = 0; i < rotatedToTheRightArray.length; i++) {
                 System.out.println(rotatedToTheRightArray[i] + "\t");
             }
-        } else if (rotation.equals("L")) {
+        } else if (rotation.equals(Constants.LEFT)) {
             for (int i = 0; i < rotationTimes; i++) {
                 Rotation.rotateToTheLeft(rotatedToTheLeftArray, rotationTimes);
             }
@@ -38,6 +39,7 @@ public class RotationController {
                 System.out.println(rotatedToTheLeftArray[i] + "\t");
             }
         }
+        keyboard.close();
     }
 
 

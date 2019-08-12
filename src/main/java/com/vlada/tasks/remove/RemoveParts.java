@@ -8,5 +8,6 @@ public class RemoveParts {
         Scanner scanner = new Scanner(System.in);
         String string = scanner.nextLine();
         System.out.println(string.substring(1, string.length() - 1));
+        scanner.close();
     }
 }

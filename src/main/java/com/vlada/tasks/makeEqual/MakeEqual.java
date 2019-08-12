@@ -10,7 +10,7 @@ public class MakeEqual {
         System.out.println("Please, enter the number of elements of a massive");
         String numberOfElements = keyboard.nextLine();
         int numberOfIntegers = Integer.valueOf(numberOfElements);
-        Integer[] arrayOfIntegers = {};
+        Integer[] arrayOfIntegers = new Integer[numberOfIntegers];
 
         for (int i = 0; i < numberOfIntegers; i++) {
             System.out.println("Please, enter an integer");
@@ -19,23 +19,25 @@ public class MakeEqual {
         }
         System.out.println(Arrays.toString(arrayOfIntegers));
         System.out.println("Please, enter a number to make equal every integer in array to");
-        Integer integerToMakeEqualTo = keyboard.nextInt();
+        String toMakeEqualTo = keyboard.nextLine();
+        int integerToMakeEqualTo = Integer.valueOf(toMakeEqualTo);
         System.out.println("Please, enter a number to add/extract");
-        Integer toAddOrExtract = keyboard.nextInt();
+        String toAddOrExtract = keyboard.nextLine();
+        int integerToAddOrExtract = Integer.valueOf(toAddOrExtract);
         for (int i = 0; i < numberOfIntegers; i++) {
             int toCompare = arrayOfIntegers[i];
             while (toCompare < integerToMakeEqualTo) {
-                toCompare = +toAddOrExtract;
+                toCompare += integerToAddOrExtract;
             }
             while (toCompare > integerToMakeEqualTo) {
-                toCompare = -toAddOrExtract;
+                toCompare -= integerToAddOrExtract;
             }
-            if (integerToMakeEqualTo.equals(toCompare)) {
+            if (integerToMakeEqualTo == toCompare) {
                 count++;
             }
         }
         System.out.println(count);
+        keyboard.close();
         return count;
-
     }
 }
